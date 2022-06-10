@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bài tập JS tuần 2 + 3 DOM</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- icon trên thanh tab -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://baitap-ui-js.vercel.app/img/icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container py-5">
+
+        <div class="card w-100 mx-auto">
+            <div class="bg-holder d-none d-lg-block bg-card"></div>
+            <div class="card-body position-relative p-0">
+                <div class="row p-0">
+                    <div class="col-12 col-md-4 col-lg-3 col-xl-2 nav-tabs nav flex-md-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link btn-tabs mb-2 active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#bai1" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Bài 1</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#bai2" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Bài 2</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#bai3" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Bài 3</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#bai4" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Bài 4</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#bai5" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Bài 5</button>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-9 col-xl-10 tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade active show" id="bai1" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <h4 class="card--heading">💰 Tính tiền lương nhân viên</h4>
+                            <div class="callout callout-info">
+
+                                <p>💡<b>Mô hình 3 khối</b>
+                                    <br> Công thức: Lương = Lương 1 ngày * số ngày làm
+                                </p>
+                                <ul>
+                                    <li>Input
+                                        <ul>
+                                            <li>số tiền lương của một ngày: tienLuong1Ngay: number</li>
+                                            <li>số ngày làm việc của nhân viên: soNgayLamViec: number</li>
+                                        </ul>
+                                    </li>
+                                    <li>Output
+                                        <ul>
+                                            <li>Tổng số tiền lương theo công thức: tongTienLuong: number</li>
+                                        </ul>
+                                    </li>
+                                    <li>Progress
+                                        <ul>
+                                            <li>tạo biến tienLuong1Ngay lưu số tiền lương của 1 ngày (người dùng nhập)</li>
+                                            <li>tạo biến soNgayLamViec lưu số ngày công làm việc (người dùng nhập)</li>
+                                            <li>tạo biến tongTienLuong lưu tổng số tiền lương </li>
+                                            <li>tongTienLuong = tienLuong1Ngay * soNgayLamViec</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputNum1" placeholder="Nhập lương một ngày">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputNum2" placeholder="Số ngày làm">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnSalary">Tính
+                                        lương</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉<span id="txtSalary"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="bai2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <h4 class="card--heading">📚 Tính giá trị trung bình</h4>
+                            <div class="callout callout-info">
+                                <p>💡<b>Mô hình 3 khối</b>
+                                </p>
+                                <ul>
+                                    <li>Input
+                                        <ul>
+                                            <li>5 số num1, num2, num3, num4, num5 : kiểu number (người dùng nhập) </li>
+                                        </ul>
+                                    </li>
+                                    <li>Output
+                                        <ul>
+                                            <li>giá trị trung bình của 5 số: kiểu number</li>
+                                        </ul>
+                                    </li>
+                                    <li>Progress
+                                        <ul>
+                                            <li>tạo 5 biến num1, num2, num3, num4, num5 lưu 5 số mà người dùng nhập</li>
+                                            <li>tạo biến trungBinh lưu giá trị trung bình của 5 số</li>
+                                            <li>trungBinh = (num1 + num2 + num3 + num4 + num5) / 5</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2 bai2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="num1" placeholder="Nhập số thứ 1">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="num2" placeholder="Nhập số thứ 2">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="num3" placeholder="Nhập số thứ 3">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="num4" placeholder="Nhập số thứ 4">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="num5" placeholder="Nhập số thứ 5">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnTB">Tính trung
+                                        bình</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉 <span id="txtTB"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="bai3" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <h4 class="card--heading">💱 Quy đổi tiền</h4>
+                            <div class="callout callout-info">
+                                <p>💡<b>Mô hình 3 khối</b>
+                                </p>
+                                <ul>
+                                    <li>Input
+                                        <ul>
+                                            <li>số tiền USD : kiểu number (người dùng nhập)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Output
+                                        <ul>
+                                            <li>số tiền VND: kiểu number</li>
+                                        </ul>
+                                    </li>
+                                    <li>Progress
+                                        <ul>
+                                            <li>tạo biến tienUSD lưu số tiền USD mà người dùng nhập vào</li>
+                                            <li>tạo biến tienVND lưu số tiền VND sau khi chuyển đổi</li>
+                                            <li>tienVND = tienUSD * 23500</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="usd" placeholder="Nhập số tiền USD">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnCurrency">Quy đổi
+                                        tiền</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉 <span id="txtCurrency"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="bai4" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <h4 class="card--heading">📏 Tính diện tích, chu vi hình chữ nhật</h4>
+                            <div class="callout callout-info">
+                                <p>💡<b>Mô hình 3 khối</b>
+                                </p>
+                                <ul>
+                                    <li>input
+                                        <ul>
+                                            <li>Chiều dài, chiều rộng: kiểu number (người dùng nhập)</li>
+                                            <li></li>
+                                        </ul>
+                                    </li>
+                                    <li>Output
+                                        <li>Chu vi, diện tích: kiểu number</li>
+                                    </li>
+                                    <li>Progress
+                                        <ul>
+                                            <li>tạo biến chieuDai lưu chiều dài người dùng nhập</li>
+                                            <li>tạo biến chieuRong lưu chiều rộng người dùng nhập</li>
+                                            <li>tạo biến chuVi, dienTich lưu chu vi và diện tích hình chữ nhật sau khi tính</li>
+                                            <li>chuVi = (chieuDai + chieuRong) / 2</li>
+                                            <li>dienTich = chieuDai * chieuRong</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="width" placeholder="Nhập chiều dài">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="height" placeholder="Nhập chiều rộng">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnCal">Tính</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉 <span id="txtCal1"></span>
+                                </div>
+                                <div class="alert alert-danger" role="alert">
+                                    👉 <span id="txtCal2"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="bai5" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <h4 class="card--heading">🧮 Tính tổng 2 ký số</h4>
+                            <div class="callout callout-info">
+                                <p>💡<b>Mô hình 3 khối</b>
+                                </p>
+                                <ul>
+                                    <li>Input
+                                        <ul>
+                                            <li>số có 2 chữ số: kiểu number (người dùng nhập)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Output
+                                        <ul>
+                                            <li>tổng 2 kí số: kiểu number</li>
+                                        </ul>
+                                    </li>
+                                    <li>Progress
+                                        <ul>
+                                            <li>tạo biến number lưu số có 2 chữ số mà người dùng nhập</li>
+                                            <li>tạo biến tong2KySo lưu tổng của 2 chữ số</li>
+                                            <li>tạo biến hangChuc lưu chữ số hàng chục</li>
+                                            <li>tạo biến hangDonVi lưu chữ số hàng đơn vị</li>
+                                            <li>hangChuc = Math.floor(number / 10)</li>
+                                            <li>hangDonVi = number % 10</li>
+                                            <li>tong2KySo = hangChuc + hangDonVi</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="number" placeholder="Nhập số có 2 chữ số">
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnSum">Tính
+                                        tổng</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉 <span id="txtSum"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Link file Js chính -->
+    <script src="../js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
